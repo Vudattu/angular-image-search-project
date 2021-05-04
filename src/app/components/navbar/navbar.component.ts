@@ -1,7 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
-import { State } from '../../reducers';
-import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +10,7 @@ export class NavbarComponent implements OnInit {
   @ViewChild('searchTab') searchTab: ElementRef;
   @ViewChild('favoriteTab') favoriteTab: ElementRef; 
 
-  constructor(private router: Router, private store: Store<State>) {
+  constructor() {
    }
 
   ngOnInit(): void {

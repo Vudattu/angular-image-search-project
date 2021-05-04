@@ -1,9 +1,18 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { stringify } from '@angular/compiler/src/util';
 import { TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { FlickrService } from './flickr.service';
 
 describe('FlickrService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [HttpClientTestingModule,
+      StoreModule.forRoot({})
+    ],
+    // provider: [ searchKeyword] 
+  }));
 
   it('should be created', () => {
     const service: FlickrService = TestBed.get(FlickrService);

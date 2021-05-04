@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { StoreModule } from '@ngrx/store';
 import { TileComponent } from './tile.component';
 
 describe('TileComponent', () => {
@@ -8,6 +9,10 @@ describe('TileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        StoreModule.forRoot({}),
+        MatDialogModule
+      ],
       declarations: [ TileComponent ]
     })
     .compileComponents();

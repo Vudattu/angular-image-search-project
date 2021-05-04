@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SearchComponent } from './search.component';
+import { StoreModule } from '@ngrx/store';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -8,7 +9,10 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
+      imports: [HttpClientTestingModule,
+        StoreModule.forRoot({})
+      ],
+      declarations: [ SearchComponent ], 
     })
     .compileComponents();
   }));

@@ -15,8 +15,8 @@ export class ImagetileComponent implements OnInit {
   }
 
   downloadImage() {
-    const imgUrl = this.imageData;
-    const imgName = 'image_m.jpg';
+    const imgUrl = this.imageData + '_m.jpg';
+    const imgName = 'image';
     this.httpClient.get(imgUrl, {responseType: 'blob' as 'json'})
       .subscribe((res: any) => {
         const file = new Blob([res], {type: res.type});

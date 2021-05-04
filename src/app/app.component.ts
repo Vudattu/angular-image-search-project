@@ -8,7 +8,7 @@ import { State } from './reducers/user.reducer';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'imageSearch';
+  title = 'Image Search Using Flicker API';
   constructor(private store: Store<State>){
   }
 }

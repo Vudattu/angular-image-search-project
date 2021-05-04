@@ -4,7 +4,7 @@
         <mat-label>Create New List</mat-label>
         <input matInput [(ngModel)]="listName" #listNameInput required>
     </mat-form-field>
-    <button mat-raised-button (click)="createList(listNameInput.value)" >Create List and save</button>
+    <button mat-raised-button color="primary" (click)="createList(listNameInput.value)" >Create List and save</button>
 </div>
 <div class="dialog-body" *ngIf="favoriteList.length">
     <h1>Save</h1>
@@ -15,5 +15,5 @@
         </mat-select>
     </mat-form-field>
 
-    <button mat-raised-button (click)="saveToList(selection.value)">Save to List</button>
+    <button mat-raised-button color="primary" (click)="saveToList(selection.value)">Save to List</button>
 </div>

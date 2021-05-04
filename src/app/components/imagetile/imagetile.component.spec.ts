@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImagetileComponent } from './imagetile.component';
@@ -8,6 +9,7 @@ describe('ImagetileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
       declarations: [ ImagetileComponent ]
     })
     .compileComponents();

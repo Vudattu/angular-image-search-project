@@ -5,7 +5,6 @@ import { map, mergeMap, catchError } from 'rxjs/operators';
 import { FlickrService } from '../services/flickr.service';
 
 
-
 @Injectable()
 export class AppEffects {
 

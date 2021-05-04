@@ -1,12 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        StoreModule.forRoot({})
       ],
       declarations: [
         AppComponent
@@ -14,22 +16,22 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
+  fit('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'imageSearch'`, () => {
+  it(`should have as title 'Image Search Using Flicker API'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('imageSearch');
+    expect(app.title).toEqual('Image Search Using Flicker API');
   });
 
-  it('should render title', () => {
+  xit('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('imageSearch app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Image Search Using Flicker API app is running!');
   });
 });

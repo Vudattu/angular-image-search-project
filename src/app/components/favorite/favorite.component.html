@@ -2,7 +2,7 @@
     <div class="list">       
     <h1>Favorite Lists</h1>
     <ul>
-        <li *ngIf="listData.length === 0"><p>No list. Create New.</p></li>
+        <li *ngIf="listData.length === 0"><p>Create New List</p></li>
         <li *ngFor="let list of listData" ><a (click)="selectActive($event.target)">{{list.listName}}</a></li>
         <li>
             <input type="text" placeholder="Enter List Name" #newListName>
@@ -34,7 +34,7 @@
         No list selected.
     </div>
     <div class="edit" *ngIf="selectedListData">
-        <button mat-raised-button *ngIf="!editMode" (click)="edit()">Edit</button>
-        <button mat-raised-button *ngIf="editMode" (click)="save(listName, description)">save</button>
+        <button mat-raised-button color="accent" *ngIf="!editMode" (click)="edit()">Edit</button>
+        <button mat-raised-button color="accent" *ngIf="editMode" (click)="save(listName, description)">save</button>
     </div>
 </div>

@@ -1,21 +1,21 @@
 <div class="search-block">
     <!-- <div class="form-group">
         <input type="search" class="form-control"  (input)="onSearchChange($event.target.value)" placeholder="Search images">
-      </div> -->  
-    <mat-form-field class="text-area" appearance="legacy">
+      </div> -->
+    <mat-form-field class="text-area" appearance="fill">
         <mat-label>Search image</mat-label>
         <input matInput [(ngModel)]="searchKeyword" (input)="onSearchChange($event.target.value)">
         <mat-icon matSuffix>search</mat-icon>
-        <mat-hint *ngIf="searchKeyword.length < 3">Atleast 3 chars required ...</mat-hint>`
+        <mat-hint *ngIf="searchKeyword.length < 3">Atleast 3 chars required ...</mat-hint>
     </mat-form-field>
- 
+
     <mat-spinner class="loader" *ngIf="showLoader"></mat-spinner>
     <div class="image-grid" *ngIf="imagesData">
-        <div class="image-tile" *ngFor="let image of imagesData" >
+        <div class="image-tile" *ngFor="let image of imagesData">
             <app-tile [imageData]="image"></app-tile>
         </div>
-        
-        <div *ngIf="imagesData.length === 0">
+
+        <div *ngIf="imagesData.length === 0 && searchKeyword!='' && !showLoader">
             No image found for current Search!
         </div>
     </div>
